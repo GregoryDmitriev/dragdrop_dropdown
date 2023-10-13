@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap");
+
+$montserrat: "Montserrat", sans-serif;
+$white: rgb(255, 255, 255);
+$blue: rgb(79, 84, 220);
+$yellow: #facc15;
+$grey: rgba(32, 31, 31, 0.11);
+$dark-grey: rgba(0, 0, 0, 0.432);
+$btn-color: rgba(0, 0, 0, 0.493);
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  padding: 0 1.5rem;
+  width: 100vw;
+  border-bottom: 0.05rem solid $grey;
+
+  .services {
+    display: flex;
+    color: $dark-grey;
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    span {
+      display: flex;
+      cursor: pointer;
+      position: relative;
+      top: 0.35rem;
+      background: $yellow;
+      color: $white;
+      font-size: .7rem;
+      width: 1rem;
+      height: 1rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.3rem;
+      margin-left: .5rem;
+    }
+  }
+
+  .settings {
+    display: flex;
+    align-items: center;
+
+    button {
+      height: 2.2rem;
+      border-radius: 0.12rem;
+      font-family: $montserrat;
+    }
+
+    .view,
+    .center,
+    .minus,
+    .plus {
+      cursor: pointer;
+    }
+
+    .center,
+    .minus,
+    .plus {
+      border: 0.05rem solid $grey;
+      background: $white;
+      width: 2.2rem;
+      fill: $dark-grey;
+
+      &:hover {
+        background: $grey;
+        transition: all 0.5s ease-out;
+        color: $white;
+        svg {
+          fill: $white;
+          transition: all 0.5s ease-out;
+        }
+      }
+    }
+
+    .minus,
+    .plus {
+      color: $dark-grey;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .view {
+      color: $white;
+      background: $blue;
+      border: 0.05rem solid $blue;
+      font-size: .5rem;
+      font-weight: 700;
+      width: 4rem;
+
+      &:hover {
+        background: $white;
+        color: $blue;
+        transition: all 0.5s ease-out;
+      }
+    }
+
+    .center {
+      border: 0.05rem solid $grey;
+      background: $white;
+      margin: 0 0.3rem;
+
+      svg {
+        fill: $dark-grey;
+        width: 0.5rem;
+      }
+    }
+
+    .scale {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .svg_plus {
+        position: relative;
+        top: 2px;
+        width: 1rem;
+      }
+
+      .svg_minus {
+        width: 0.5rem;
+      }
+    }
+  }
+}
+
+.arrow {
+  width: 4rem;
+  height: 1.5rem;
+  cursor: pointer;
+  background: $grey;
+  border: none;
+
+  svg {
+    fill: $white;
+    width: 1.4rem;
+  }
+}
