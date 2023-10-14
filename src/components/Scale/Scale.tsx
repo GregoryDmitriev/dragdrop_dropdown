@@ -4,6 +4,7 @@ import styles from "./ScaleStyle.module.scss";
 
 interface ScaleProps {
   valueScale: string;
+  setIndexStep: (scale: number) => void;
   handleScaleStep: () => void;
 }
 

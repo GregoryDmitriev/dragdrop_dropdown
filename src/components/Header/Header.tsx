@@ -5,52 +5,49 @@ import Modal from "../Scale/Modal";
 import styles from "./HeaderStyle.module.scss";
 
 interface HeaderProps {
+  step: number;
   handleZoomPlus: () => void;
   handleZoomMinus: () => void;
   handleCenterAlign: () => void;
   setScale: (scale: number) => void;
+  setIndexStep: (scale: number) => void;
   setScaleUpdate: (scale: number) => void;
+  scaleStep: number[];
 }
 
 const Header: FC<HeaderProps> = ({
+  step,
+  scaleStep,
   handleZoomPlus,
   handleZoomMinus,
   handleCenterAlign,
-  setScaleUpdate,
+  setScale,
+  setIndexStep,
 }) => {
-  const [valueScale, setValueScale] = useState("100%");
   const [open, setOpen] = useState(false);
+  const [openHeader, setOpenHeader] = useState(true);
 
-  const scaleStep = [
-    "25%",
-    "30%",
-    "40%",
-    "50%",
-    "60%",
-    "70%",
-    "80%",
-    "90%",
-    "100%",
-    "125%",
-    "150%",
-  ];
+  
 
   const handleScaleStep = () => {
     setOpen(!open);
   };
 
-  const selectScaleUpdate = (step: string) => {
-    setValueScale(step);
-    const scaleValue = parseInt(step, 10) / 100;
-    setScaleUpdate(scaleValue);
+  const selectScaleUpdate = (step: number) => {
+    setScale(step/100)
+    setIndexStep(step);
     setOpen(false);
   };
 
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <div className={styles.services}>Services<span>0</span></div>
-        <div className={styles.settings}>
+      <header
+        className={`${styles.header} ${openHeader ? styles.open : styles.hide}`}
+      >
+        <div className={`${styles.services} ${openHeader ? "" : styles.hide}`}>
+          Services<span>0</span>
+        </div>
+        <div className={`${styles.settings} ${openHeader ? "" : styles.hide}`}>
           <button className={styles.view}>LIST VIEW</button>
           <button className={styles.center} onClick={handleCenterAlign}>
             <svg
@@ -73,7 +70,11 @@ const Header: FC<HeaderProps> = ({
               </svg>
             </button>
 
-            <Scale valueScale={valueScale} handleScaleStep={handleScaleStep} />
+            <Scale
+              valueScale={`${step}%`}
+              handleScaleStep={handleScaleStep}
+              setIndexStep={setIndexStep}
+            />
 
             {open && (
               <Modal>
@@ -101,13 +102,20 @@ const Header: FC<HeaderProps> = ({
           </div>
         </div>
       </header>
-      <button className={styles.arrow}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-          <path d="m45.7 38.1-2 2L32 28.4 20.3 40.1l-2-2L32 24.4l13.7 13.7" />
-        </svg>
+      <button
+        className={styles.btnHeader}
+        onClick={() => setOpenHeader(!openHeader)}
+      >
+        {openHeader ? (
+          <i className={styles.arrowUp}></i>
+        ) : (
+          <i className={styles.arrowDown}></i>
+        )}
       </button>
     </div>
   );
 };
 
 export default Header;
+
+

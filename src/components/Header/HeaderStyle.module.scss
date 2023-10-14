@@ -14,14 +14,19 @@ $btn-color: rgba(0, 0, 0, 0.493);
   align-items: center;
 }
 
-header {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 5rem;
-  padding: 0 1.5rem;
+  height: 0;
   width: 100vw;
   border-bottom: 0.05rem solid $grey;
+  transition: max-height 0.3s ease-in-out;
+
+  &.open {
+    min-height: 5rem;
+    padding: 0 1.5rem;
+  }
 
   .services {
     display: flex;
@@ -36,13 +41,13 @@ header {
       top: 0.35rem;
       background: $yellow;
       color: $white;
-      font-size: .7rem;
+      font-size: 0.7rem;
       width: 1rem;
       height: 1rem;
       justify-content: center;
       align-items: center;
       border-radius: 0.3rem;
-      margin-left: .5rem;
+      margin-left: 0.5rem;
     }
   }
 
@@ -93,7 +98,7 @@ header {
       color: $white;
       background: $blue;
       border: 0.05rem solid $blue;
-      font-size: .5rem;
+      font-size: 0.5rem;
       font-weight: 700;
       width: 4rem;
 
@@ -133,15 +138,36 @@ header {
   }
 }
 
-.arrow {
+.btnHeader {
   width: 4rem;
   height: 1.5rem;
   cursor: pointer;
   background: $grey;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  svg {
-    fill: $white;
-    width: 1.4rem;
+  i {
+    border: solid $white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+
+    &.arrowUp {
+      position: relative;
+      top: 0.1rem;
+      transform: rotate(-135deg);
+    }
+
+    &.arrowDown {
+      position: relative;
+      bottom: 0.2rem;
+      transform: rotate(45deg);
+    }
   }
+}
+
+.hide {
+  display: none;
 }

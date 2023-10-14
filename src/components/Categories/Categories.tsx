@@ -13,8 +13,8 @@ const Categories: FC<CategoriesProps> = ({ scale, center }) => {
     <main className={styles.main} style={{
       transform: `scale(${scale})`,
       display: center ? 'flex' : 'block',
-      justifyContent: 'center',
-      alignItems: 'center',
+      justifyContent: center ? 'center' : 'flex-start',
+      alignItems: center ? 'flex-start' : 'flex-start',
     }}>
       <ItemTodo />
     </main>
