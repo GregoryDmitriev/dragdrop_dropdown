@@ -1,3 +1,5 @@
+The project was completed in React and Typescript without the use of state managers.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
