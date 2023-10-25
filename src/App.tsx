@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 
-import Categories from "./components/Categories/Categories";
+import Main from "./components/Main/Main";
 import Header from "./components/Header/Header";
 
 const App: FC = () => {
@@ -36,15 +36,16 @@ const App: FC = () => {
     <>
       <Header
         step={indexStep}
-        scaleStep={scaleStep}
-        setIndexStep={setIndexStep}
         setScale={setScale}
+        scaleStep={scaleStep}
         setScaleUpdate={setScale}
+        setIndexStep={setIndexStep}
         handleZoomPlus={handleZoomPlus}
         handleZoomMinus={handleZoomMinus}
         handleCenterAlign={handleCenterAlign}
       />
-      <Categories scale={scale} center={center} />
+      
+      <Main scale={scale} center={center}  />
     </>
   );
 };

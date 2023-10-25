@@ -27,8 +27,6 @@ const Header: FC<HeaderProps> = ({
   const [open, setOpen] = useState(false);
   const [openHeader, setOpenHeader] = useState(true);
 
-  
-
   const handleScaleStep = () => {
     setOpen(!open);
   };
@@ -42,8 +40,7 @@ const Header: FC<HeaderProps> = ({
   return (
     <div className={styles.container}>
       <header
-        className={`${styles.header} ${openHeader ? styles.open : styles.hide}`}
-      >
+        className={`${styles.header} ${openHeader ? styles.open : styles.hide}`}>
         <div className={`${styles.services} ${openHeader ? "" : styles.hide}`}>
           Services<span>0</span>
         </div>

@@ -4,14 +4,16 @@ $montserrat: "Montserrat", sans-serif;
 $white: rgb(255, 255, 255);
 $blue: rgb(79, 84, 220);
 $yellow: #facc15;
-$grey: rgba(32, 31, 31, 0.11);
-$dark-grey: rgba(0, 0, 0, 0.432);
+$grey: rgba(32, 31, 31, 0.164);
+$dark-grey: rgba(0, 0, 0, 0.548);
 $btn-color: rgba(0, 0, 0, 0.493);
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  z-index: 100;
 }
 
 .header {
@@ -21,7 +23,6 @@ $btn-color: rgba(0, 0, 0, 0.493);
   height: 0;
   width: 100vw;
   border-bottom: 0.05rem solid $grey;
-  transition: max-height 0.3s ease-in-out;
 
   &.open {
     min-height: 5rem;
@@ -139,18 +140,16 @@ $btn-color: rgba(0, 0, 0, 0.493);
 }
 
 .btnHeader {
-  width: 4rem;
-  height: 1.5rem;
+  width: 5.17rem;
+  height: 2rem;
   cursor: pointer;
   background: $grey;
   border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 1rem;
 
   i {
     border: solid $white;
-    border-width: 0 3px 3px 0;
+    border-width: 0 .188rem .188rem 0;
     display: inline-block;
     padding: 3px;
 

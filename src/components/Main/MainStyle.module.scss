@@ -1,0 +1,36 @@
+$white: rgb(255, 255, 255);
+$grey: rgba(32, 31, 31, 0.164);
+$dark-grey: rgba(0, 0, 0, 0.548);
+
+.main {
+  position: relative;
+  left: 1rem;
+  z-index: 0;
+
+  .container {
+    display: flex;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    width: 1rem;
+    height: 1rem;
+    background-color: $grey;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    position: relative;
+  }
+
+  .plus {
+    width: 1rem;
+    right: .04rem;
+    top: .06rem;
+    position: absolute;
+    color: $white;
+    pointer-events: none;
+    cursor: pointer;
+  }
+
+}

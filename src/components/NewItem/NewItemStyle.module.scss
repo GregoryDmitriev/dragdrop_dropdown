@@ -1,0 +1,75 @@
+$white: rgb(255, 255, 255);
+$grey: rgba(32, 31, 31, 0.164);
+$dark-grey: rgba(0, 0, 0, 0.548);
+
+.box_item {
+  display: flex;
+  margin: 0 .3rem;
+
+  input[type="text" i] {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: $dark-grey;
+    cursor: all-scroll;
+    border: none;
+    outline: none;
+    padding: 0;
+
+    &:focus {
+      color: $grey;
+    }
+  }
+
+  .new_item {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: $dark-grey;
+    padding: 0.5rem;
+    border: 0.05rem solid $grey;
+    cursor: all-scroll;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    width: 1rem;
+    height: 1rem;
+    background-color: $grey;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    position: relative;
+  }
+
+  .plus {
+    width: 1rem;
+    right: 0.04rem;
+    top: 0.06rem;
+    position: absolute;
+    color: $white;
+    cursor: pointer;
+  }
+
+  span:not(:first-child) {
+    margin-left: 0.25rem;
+  }
+
+  span {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    color: $white;
+    font-size: 0.55rem;
+    padding-left: 0.24rem;
+    padding-top: 0.04rem;
+    cursor: pointer;
+  }
+  .clear {
+    background: #facc15;
+  }
+
+  .add {
+    background: #24ad14;
+    font-weight: 600;
+  }
+}
