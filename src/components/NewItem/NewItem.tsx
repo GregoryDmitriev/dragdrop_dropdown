@@ -1,32 +1,34 @@
-import { FC, useState } from "react";
+import { FC, useState, useRef } from "react";
 
-import styles from "./NewItemStyle.module.scss";
 import ButtonBox from "../ButtonBox/ButtonBox";
+import styles from "./NewItemStyle.module.scss";
 
 interface NewItemProps {
   children?: JSX.Element;
   createNewItem: () => void;
+  showVerticalLine: boolean;
 }
 
 const NewItem: FC<NewItemProps> = ({ createNewItem }) => {
-  const [inputValue, setInputValue] = useState("Categories");
+  const [inputValue, setInputValue] = useState("");
+  
+
+  const newElementRef = useRef<HTMLDivElement | null>(null);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
-  const inputWidth = inputValue ? inputValue.length * 6.3 + "px" : "80.79px";
-
   return (
     <div className={styles.box_item}>
-      <div className={styles.new_item}>
+      <div className={styles.new_item} ref={newElementRef}>
         <input
           className={styles.title}
           type="text"
+          autoFocus={true}
           placeholder="Category name"
           value={inputValue}
           onChange={handleInputChange}
-          style={{ width: inputWidth }}
         />
       </div>
       <ButtonBox>

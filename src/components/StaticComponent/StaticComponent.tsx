@@ -9,7 +9,7 @@ interface StaticComponentProps {
 const StaticComponent: FC<StaticComponentProps> = (props) => {
   return (
     <div className={styles.static_box}>
-      <p className={styles.title}>Categories</p>
+      <div className={styles.title}>Categories</div>
       {props.children}
     </div>
   );

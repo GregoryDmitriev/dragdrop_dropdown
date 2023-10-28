@@ -1,15 +1,28 @@
 $white: rgb(255, 255, 255);
 $grey: rgba(32, 31, 31, 0.164);
-$dark-grey: rgba(0, 0, 0, 0.548);
+$dark-grey: rgb(0 0 0 / 63%);
 
 .box_item {
   display: flex;
-  margin: 0 .3rem;
+  position: relative;
+  margin: 1rem 0 0 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0.1rem;
+    height: 1rem;
+    background-color: $grey;
+    top: -1rem;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
   input[type="text" i] {
     font-size: 0.7rem;
     font-weight: 700;
-    color: $dark-grey;
+    color: $grey;
     cursor: all-scroll;
     border: none;
     outline: none;
@@ -23,10 +36,8 @@ $dark-grey: rgba(0, 0, 0, 0.548);
   .new_item {
     font-size: 0.7rem;
     font-weight: 700;
-    color: $dark-grey;
     padding: 0.5rem;
     border: 0.05rem solid $grey;
-    cursor: all-scroll;
   }
 
   button {
@@ -34,7 +45,6 @@ $dark-grey: rgba(0, 0, 0, 0.548);
     align-items: center;
     width: 1rem;
     height: 1rem;
-    background-color: $grey;
     border-radius: 50%;
     cursor: pointer;
     border: none;
@@ -45,6 +55,7 @@ $dark-grey: rgba(0, 0, 0, 0.548);
     width: 1rem;
     right: 0.04rem;
     top: 0.06rem;
+    background-color: $grey;
     position: absolute;
     color: $white;
     cursor: pointer;
@@ -72,4 +83,8 @@ $dark-grey: rgba(0, 0, 0, 0.548);
     background: #24ad14;
     font-weight: 600;
   }
+}
+
+.box_item:not(:first-child) {
+  margin-left: 0.8rem;
 }

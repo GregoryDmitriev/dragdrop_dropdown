@@ -1,9 +1,13 @@
 $white: rgb(255, 255, 255);
 $grey: rgba(32, 31, 31, 0.164);
-$dark-grey: rgba(0, 0, 0, 0.548);
+$dark-grey: rgb(0 0 0 / 63%);
 
 .static_box {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0.6rem;
 
   .title {
     font-size: 0.7rem;
@@ -11,7 +15,6 @@ $dark-grey: rgba(0, 0, 0, 0.548);
     color: $dark-grey;
     padding: 0.5rem;
     border: 0.05rem dashed $grey;
-    cursor:all-scroll;
+    cursor: all-scroll;
   }
-
 }
